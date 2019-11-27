@@ -1,0 +1,8 @@
+.back-drop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba($black-color, 0.2);
+    z-index: 200;
+    display: none;
+}
