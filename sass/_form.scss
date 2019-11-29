@@ -1,0 +1,112 @@
+.share-image__container {
+    display: none;
+    opacity: 0;
+    transition: all 1s ease-in-out;
+    .form {
+        
+        .form__input-container {
+            width:50%; 
+            margin:3rem auto 0; 
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            
+            padding: 4rem;
+
+            .group { 
+                position:relative; 
+                margin-bottom:45px; 
+
+                input {
+                    font-size:18px;
+                    padding:10px 10px 10px 5px;
+                    display:block;
+                    width:300px;
+                    border:none;
+                    border-bottom:1px solid rgba($black-color, .2);
+
+                    &:focus {
+                        outline:none;
+                    }
+                }
+
+                label {
+                    color:#999; 
+                    font-size:18px;
+                    font-weight:normal;
+                    position:absolute;
+                    pointer-events:none;
+                    left:5px;
+                    top:10px;
+                    transition:0.2s ease all; 
+                }
+
+                input:focus ~ label, input:valid ~ label {
+                    top:-20px;
+                    font-size:14px;
+                    font-family: 'Lato', sans-serif;
+                    font-weight: 700;
+                    color:$main-color;
+                }
+
+                .bar {
+                    position:relative; display:block; width:300px;
+
+                    &:before, &:after {
+                        content:'';
+                        height:2px; 
+                        width:0;
+                        bottom:1px; 
+                        position:absolute;
+                        background: $main-color; 
+                        transition:0.2s ease all; 
+                    }
+                    &:before {
+                        left:50%;
+                    }
+                    &:after {
+                        right:50%; 
+                    }
+                }
+
+                input:focus ~ .bar:before, input:focus ~ .bar:after {
+                    width:50%;
+                }
+
+                .btn {
+                    margin: -1rem;
+                    font-size: 1.6rem;
+                    color: $white-color;
+                    font-family: 'lato', sans-serif;
+                    font-weight: 400;
+                    cursor: pointer;
+                    display: inline-block;
+                    text-decoration: none;
+                    border: none;
+                    padding: 1rem 3rem;
+                    text-transform: uppercase;
+                    background-color: rgba($alt-color, .7);
+                    border-radius: 10rem;
+                    box-shadow: 0 1px 3px rgba($black-color, .7);
+                }
+            }
+        }
+    }
+
+}
+
+.share-image__container--visible {
+    display: block;
+    opacity: 1;
+    animation: scaleDiv .3s ease-in-out;
+}
+
+@keyframes scaleDiv {
+    0% {
+        transform: scale(.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

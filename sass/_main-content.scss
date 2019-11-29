@@ -1,4 +1,5 @@
 .main {
+    position: relative;
     .cover__container {
         margin-bottom: 2rem;
 
@@ -16,16 +17,13 @@
         text-align: center;
     }
 
-    .post-photo {
-        position: fixed;
-        margin: 2rem 2.5rem;
-        bottom: 0;
-        right: 0;
+    .btn-circle {
         height: 5.5rem;
         width: 5.5rem;
         border-radius: 50%;
         cursor: pointer;
         background-color: $alt-color;
+        box-shadow: 0 1px 3px rgba($black-color, .7);
 
         i {
             position: absolute;
@@ -37,5 +35,22 @@
             color: $white-color;
         }
     }
+    .add-photo {
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        margin: 2rem 2.5rem;
+    }
+
+
+    .share-image__container {
+        height: 100%;
+        width: 100%;
+        background-color: $white-color;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
 }
 
