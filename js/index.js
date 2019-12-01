@@ -9,12 +9,14 @@ const closeSideBar = () => {
 };
 
 const openPopup = () => {
+    document.querySelector('.share-image__container').classList.remove('share-image__container--hidden');
     document.querySelector('.share-image__container').classList.add('share-image__container--visible');
     document.body.style.overflow = 'hidden';
 };
 
 const closePopup = () => {
     document.querySelector('.share-image__container').classList.remove('share-image__container--visible');
+    document.querySelector('.share-image__container').classList.add('share-image__container--hidden');
     document.body.style.overflow = 'auto';
 };
 

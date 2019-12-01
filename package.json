@@ -4,9 +4,10 @@
   "description": "an app like instagram but locally for you only",
   "main": "index.js",
   "scripts": {
-    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "watch:sass:main": "node-sass sass/main.scss css/style.css -w",
+    "watch:sass:help": "node-sass sass/pages/help/help.scss css/help.css -w",
     "devserver": "live-server",
-    "start": "npm-run-all --parallel devserver watch:sass",
+    "start": "npm-run-all --parallel devserver watch:sass:main watch:sass:help",
     "compile:sass": "node-sass sass/main.scss css/style.comp.css",
     "concat:css": "concat -o css/style.concat.css css/style.comp.css",
     "prefix:css": "postcss --use autoprefixer -b \"last 5 versions\" css/style.concat.css -o css/style.prefix.css",

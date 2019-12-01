@@ -38,6 +38,11 @@
     &__item {
         padding: 1.4rem 1.8rem;
         cursor: pointer;
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
     }
 
     &__notification {
