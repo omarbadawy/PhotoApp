@@ -13,21 +13,21 @@ const openPopup = () => {
     document.querySelector('.share-image__container').classList.add('share-image__container--visible');
     document.body.style.overflow = 'hidden';
 
-    if (deferredPrompt) {
-        deferredPrompt.prompt();
+    // if (deferredPrompt) {
+    //     deferredPrompt.prompt();
 
-        deferredPrompt.userChoice.then(function(choiceResult) {
-            console.log(choiceResult.outcome);
+    //     deferredPrompt.userChoice.then(function(choiceResult) {
+    //         console.log(choiceResult.outcome);
 
-            if (choiceResult.outcome === 'dismissed') {
-                console.log('User cancelled');
-            } else {
-                console.log('added to the home screen');
-            }
-        });
+    //         if (choiceResult.outcome === 'dismissed') {
+    //             console.log('User cancelled');
+    //         } else {
+    //             console.log('added to the home screen');
+    //         }
+    //     });
 
-        deferredPrompt = null;
-    }
+    //     deferredPrompt = null;
+    // }
 };
 
 const closePopup = () => {

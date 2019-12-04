@@ -1,4 +1,4 @@
-var deferredPrompt;
+//var deferredPrompt;
 
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('./ServiceWorker.js')
@@ -10,6 +10,16 @@ if ('serviceWorker' in navigator) {
 window.addEventListener('beforeinstallprompt', function(event) {
     console.log('beforeinstallprompt fired');
     event.preventDefault();
-    deferredPrompt = event;
+    //deferredPrompt = event;
+    event.prompt();
+    event.userChoice.then(function(choiceResult) {
+        console.log(choiceResult.outcome);
+
+        if (choiceResult.outcome === 'dismissed') {
+            console.log('User cancelled');
+        } else {
+            console.log('added to the home screen');
+        }
+    });
     return false;
 });
